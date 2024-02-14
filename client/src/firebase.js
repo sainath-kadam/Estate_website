@@ -5,7 +5,7 @@ import { initializeApp } from 'firebase/app';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  apiKey:"AIzaSyCqtEVw5A5KpMpJPcF1FoRfiQt3PKI4GGM",
   authDomain: "kadam-estate.firebaseapp.com",
   projectId: "kadam-estate",
   storageBucket: "kadam-estate.appspot.com",
