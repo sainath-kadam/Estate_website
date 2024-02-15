@@ -6,12 +6,14 @@ import SwiperCore from "swiper";
 import "swiper/css/bundle";
 import ListingItem from "../components/ListingItem";
 import houseImage from "../assets/house1.avif"; // Import the image
+
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
   const [saleListings, setSaleListings] = useState([]);
   const [rentListings, setRentListings] = useState([]);
+  
   SwiperCore.use([Navigation]);
-  console.log(offerListings);
+  
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
@@ -41,11 +43,13 @@ export default function Home() {
         const data = await res.json();
         setSaleListings(data);
       } catch (error) {
-        log(error);
+        console.log(error);
       }
     };
+    
     fetchOfferListings();
   }, []);
+
   return (
     <div>
       {/* top */}
@@ -60,7 +64,7 @@ export default function Home() {
         </p>
         <Link
           to={"/search"}
-          className="text-sm sm:text-base text-blue-800 font-bold hover:underline"
+          className="bg-green-700 text-white p-3 rounded-lg uppercase hover:opacity-95"
         >
           Explore Listings
         </Link>
@@ -90,8 +94,8 @@ export default function Home() {
                 Recent offers
               </h2>
               <Link
-                className="text-sm text-blue-800 hover:underline"
                 to={"/search?offer=true"}
+                className="bg-green-700 text-white px-3 py-2 rounded-sm uppercase text-xs hover:opacity-95"
               >
                 Show more offers
               </Link>
@@ -110,8 +114,8 @@ export default function Home() {
                 Recent places for rent
               </h2>
               <Link
-                className="text-sm text-blue-800 hover:underline"
                 to={"/search?type=rent"}
+                className="bg-green-700 text-white px-3 py-2 rounded-sm uppercase text-xs hover:opacity-95"
               >
                 Show more places for rent
               </Link>
@@ -130,8 +134,8 @@ export default function Home() {
                 Recent places for sale
               </h2>
               <Link
-                className="text-sm text-blue-800 hover:underline"
                 to={"/search?type=sale"}
+                className="bg-green-700 text-white px-3 py-2 rounded-sm uppercase text-xs hover:opacity-95"
               >
                 Show more places for sale
               </Link>
@@ -147,6 +151,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 {
   /* <SwiperSlide className="flex items-center justify-center">
