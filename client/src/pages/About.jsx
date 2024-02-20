@@ -1,7 +1,6 @@
 
 import React from 'react';
 import houseImage from '../assets/house.jpg'; // Import the image
-
 export default function About() {
   return (
     <div className='py-20 px-4 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center'>
