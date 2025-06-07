@@ -73,7 +73,6 @@ export default function CreateListing() {
       setUploading(false);
     }
   };
-
   const storeImage = async (file) => {
     return new Promise((resolve, reject) => {
       const storage = getStorage(app);
@@ -98,14 +97,12 @@ export default function CreateListing() {
       );
     });
   };
-
   const handleRemoveImage = (index) => {
     setFormData({
       ...formData,
       imageUrls: formData.imageUrls.filter((_, i) => i !== index),
     });
   };
-
   const handleChange = (e) => {
     if (e.target.id === 'sale' || e.target.id === 'rent') {
       setFormData({
@@ -113,7 +110,6 @@ export default function CreateListing() {
         type: e.target.id,
       });
     }
-
     if (
       e.target.id === 'parking' ||
       e.target.id === 'furnished' ||
